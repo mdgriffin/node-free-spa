@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue - Without Node Build Tools</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/alameda@1.4.0/alameda.min.js" data-main="app/index.js"
+    ></script>
+
+    <script>
+      require.config({
+        paths: {
+          es6: "es6",
+          babel: "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min",
+          vue: "https://cdn.jsdelivr.net/npm/vue/dist/vue",
+        },
+        es6: {
+          fileExtension: ".js"
+        },
+        babel: {
+          presets: ["es2015"],
+          plugins: ["transform-es2015-modules-amd"]
+        }
+      });
+
+    </script>
+  </body>
+</html>
